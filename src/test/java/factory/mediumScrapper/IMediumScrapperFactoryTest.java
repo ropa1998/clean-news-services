@@ -41,5 +41,30 @@ class IMediumScrapperFactoryTest {
         assertFalse(nytAmericasMediumScrapper.getArticles().isEmpty());
     }
 
+    @Test
+    public void InfobaeRSSScrapperWorks() {
+        IMediumScrapperFactory mediumScrapperFactory = new RSSMediumScrapperFactory(webClient);
+        IMediumScrapper ambitoScrapper = mediumScrapperFactory.getAmbitoScrapper();
+        ambitoScrapper.run();
+        assertFalse(ambitoScrapper.getArticles().isEmpty());
+    }
+
+    @Test
+    public void VoxRSSScrapperWorks() {
+        IMediumScrapperFactory mediumScrapperFactory = new RSSMediumScrapperFactory(webClient);
+        IMediumScrapper voxScrapper = mediumScrapperFactory.getVoxScrapper();
+        voxScrapper.run();
+        assertFalse(voxScrapper.getArticles().isEmpty());
+    }
+
+    @Test
+    public void WallStreetJournalWorks() {
+        IMediumScrapperFactory mediumScrapperFactory = new RSSMediumScrapperFactory(webClient);
+        IMediumScrapper wallStreetJournalScrapper = mediumScrapperFactory.getWallStreetJournalScrapper();
+        wallStreetJournalScrapper.run();
+        assertFalse(wallStreetJournalScrapper.getArticles().isEmpty());
+    }
+
+
 
 }

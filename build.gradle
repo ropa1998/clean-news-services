@@ -11,7 +11,8 @@ plugins {
     id 'java'
 
     // Apply the application plugin to add support for building an application
-    id 'application'
+    id 'java-library'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
 
 }
 
@@ -24,8 +25,6 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.34.1'
-    compile group: 'com.rometools', name: 'rome', version: '1.12.0'
     testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
     compile files('/home/rodrigo/projects/clean-news-core/build/libs/clean-news-core-all.jar')
@@ -44,12 +43,4 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
 
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'Main'
-        )
-    }
-}

@@ -5,6 +5,7 @@ import implementations.factory.webclient.WebClientFactory;
 import implementations.scrappers.trend.ITrendScrapper;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ITrendScrapperFactoryTest {
@@ -21,7 +22,7 @@ class ITrendScrapperFactoryTest {
         ITrendScrapperFactory trendScrapperFactory = new Trends24ScrapperFactory(webClient);
         ITrendScrapper trendScrapper = trendScrapperFactory.getArgentinaScrapper();
         trendScrapper.run();
-        assertTrue(!trendScrapper.getTrends().isEmpty());
+        assertFalse(trendScrapper.getTrends().isEmpty());
     }
 
 }

@@ -19,4 +19,9 @@ public interface IMediumScrapperFactory {
 
     IMediumScrapper getNYTAmericasScrapper();
 
+    IMediumScrapper getAmbitoScrapper();
+
+    IMediumScrapper getVoxScrapper();
+
+    IMediumScrapper getWallStreetJournalScrapper();
 }
