@@ -32,7 +32,7 @@ wallStreetJournalScrapper.run();
 
 First of all, we have the ```IMediumScrapperFactory```, which is an interface that force all classes that implement it to be able to implement scrapper for all supported media.
 
-Then, the ```RSSMediumsScrapperFactory``` is the preferred configuration, as it works against RSS instead of the web pages of the media.
+Then, the ```RSSMediumScrapperFactory``` is the preferred configuration, as it works against RSS instead of the web pages of the media.
 
 Once we have the IMediumScrapper we want we later want to run it. The ```.run()``` populates the scarpers with items, which in this case is ```IArticles```. The execution and instantiation are separated because of how expensive is the execution, so that the user can choose when to make this expensive call. 
   
